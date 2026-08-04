@@ -1,7 +1,7 @@
 <x-layouts.base :title="$title" robots="noindex, nofollow">
     <div class="drawer lg:drawer-open min-h-screen">
         {{-- Toggle Checkbox untuk Mini Sidebar --}}
-        <input id="admin-drawer" type="checkbox" class="drawer-toggle" />
+        <input id="admin-drawer" type="checkbox" class="drawer-toggle" checked />
 
         {{-- Content Area --}}
         <div class="drawer-content flex flex-col min-h-screen bg-base-300">
