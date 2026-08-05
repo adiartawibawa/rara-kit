@@ -8,7 +8,7 @@
                 <p class="text-sm text-base-content/70">Kelola, sunting, dan publikasikan artikel Anda.</p>
             </div>
             <div>
-                <a href="#" class="btn btn-primary gap-2">
+                <a href="{{ route('articles.create') }}" class="btn btn-primary gap-2">
                     <x-icon name="plus" class="size-4" />
                     Buat Artikel Baru
                 </a>
