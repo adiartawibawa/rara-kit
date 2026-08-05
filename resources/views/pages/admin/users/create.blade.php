@@ -1,0 +1,24 @@
+<x-layouts.admin title="Tambah Pengguna Baru">
+
+    {{-- Header Page --}}
+    <x-slot:header>
+        <div class="flex items-center gap-3">
+            <a href="{{ route('users.index') }}" class="btn btn-circle btn-ghost btn-sm" title="Kembali">
+                <x-icon name="arrow-left" class="size-5" />
+            </a>
+            <div>
+                <h1 class="text-2xl font-bold text-base-content">Tambah Pengguna Baru</h1>
+                <p class="text-sm text-base-content/70">Buat akun pengguna baru untuk mengelola sistem.</p>
+            </div>
+        </div>
+    </x-slot:header>
+
+    <form action="#" method="POST" enctype="multipart/form-data">
+        @csrf
+
+        {{-- Include Partial Form --}}
+        @include('pages.admin.users.partials.form')
+
+    </form>
+
+</x-layouts.admin>

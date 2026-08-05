@@ -91,7 +91,7 @@
 
         {{-- Users Management --}}
         <li>
-            <a href="#"
+            <a href="{{ route('users.index') }}"
                 class="is-drawer-close:tooltip is-drawer-close:tooltip-right is-drawer-open:before:hidden is-drawer-open:after:hidden"
                 data-tip="Pengguna">
                 <x-icon name="users" class="size-5 shrink-0" />

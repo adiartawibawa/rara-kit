@@ -31,4 +31,11 @@ Route::prefix('admin')->group(function () {
         Route::view('/', 'pages.admin.comments.index')->name('index');
         Route::view('/{comment}', 'pages.admin.comments.show')->name('show');
     });
+
+    Route::prefix('users')->name('users.')->group(function () {
+        Route::view('/', 'pages.admin.users.index')->name('index');
+        Route::view('/create', 'pages.admin.users.create')->name('create');
+        Route::view('/{user}', 'pages.admin.users.show')->name('show');
+        Route::view('/{user}/edit', 'pages.admin.users.edit')->name('edit');
+    });
 });
