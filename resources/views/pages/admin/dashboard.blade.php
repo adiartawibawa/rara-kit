@@ -9,11 +9,19 @@
                     Selamat datang kembali! Berikut adalah statistik situs Anda hari ini.
                 </p>
             </div>
-            <div>
-                <a href="{{ route('articles.create') }}" class="btn btn-primary gap-2">
-                    <x-icon name="file-plus-corner" class="h-4 w-4" />
-                    Buat Artikel Baru
-                </a>
+            <div class="inline-flex gap-2">
+                <div>
+                    <a href="{{ route('articles.create') }}" class="btn btn-primary gap-2">
+                        <x-icon name="file-plus-corner" class="h-4 w-4" />
+                        Buat Artikel Baru
+                    </a>
+                </div>
+                <div class="aura aura-dual text-primary">
+                    <a href="{{ route('home') }}" target="_blank" class="btn  gap-2">
+                        <x-icon name="globe" class="h-4 w-4" />
+                        Lihat Situs
+                    </a>
+                </div>
             </div>
         </div>
     </x-slot:header>
@@ -25,7 +33,7 @@
 
             <div class="stat">
                 <div class="stat-figure text-primary">
-                    <x-icon name="document-text" class="h-8 w-8" />
+                    <x-icon name="file-text" class="h-8 w-8" />
                 </div>
                 <div class="stat-title">Total Artikel</div>
                 <div class="stat-value text-primary">{{ number_format($stats['total_articles'] ?? 128) }}</div>
@@ -43,7 +51,7 @@
 
             <div class="stat">
                 <div class="stat-figure text-warning">
-                    <x-icon name="chat-bubble-left-right" class="h-8 w-8" />
+                    <x-icon name="messages-square" class="h-8 w-8" />
                 </div>
                 <div class="stat-title">Moderasi Komentar</div>
                 <div class="stat-value text-warning">{{ $stats['pending_comments'] ?? 8 }}</div>
@@ -257,22 +265,24 @@
                     <div class="card-body p-6">
                         <h2 class="card-title mb-3 text-base font-bold">Aksi Cepat</h2>
                         <div class="flex flex-col gap-2">
-                            <a href="{{ route('pages.create') }}" class="btn btn-outline btn-sm justify-start gap-2">
-                                <x-icon name="document-plus" class="h-4 w-4" />
+                            <a href="{{ route('pages.create') }}"
+                                class="btn btn-outline btn-sm btn-primary justify-start gap-2">
+                                <x-icon name="file-plus-corner" class="h-4 w-4" />
                                 Buat Halaman Baru
                             </a>
                             <a href="{{ route('categories.index') }}"
-                                class="btn btn-outline btn-sm justify-start gap-2">
-                                <x-icon name="folder" class="h-4 w-4" />
+                                class="btn btn-outline btn-sm btn-primary justify-start gap-2">
+                                <x-icon name="tag-plus" class="h-4 w-4" />
                                 Kelola Kategori & Tag
                             </a>
-                            <a href="{{ route('media.index') }}" class="btn btn-outline btn-sm justify-start gap-2">
-                                <x-icon name="photo" class="h-4 w-4" />
-                                Unggah Media Gambar
+                            <a href="{{ route('media.index') }}"
+                                class="btn btn-outline btn-sm btn-primary justify-start gap-2">
+                                <x-icon name="image-up" class="h-4 w-4" />
+                                Unggah Media & Gambar
                             </a>
                             <a href="{{ route('settings.index') }}"
-                                class="btn btn-outline btn-sm justify-start gap-2">
-                                <x-icon name="cog" class="h-4 w-4" />
+                                class="btn btn-outline btn-sm btn-primary justify-start gap-2">
+                                <x-icon name="monitor-cog" class="h-4 w-4" />
                                 Pengaturan Umum Situs
                             </a>
                         </div>
