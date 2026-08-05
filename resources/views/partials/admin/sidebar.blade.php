@@ -42,7 +42,7 @@
 
         {{-- Pages / Halaman Statis --}}
         <li>
-            <a href="#"
+            <a href="{{ route('pages.index') }}"
                 class="is-drawer-close:tooltip is-drawer-close:tooltip-right is-drawer-open:before:hidden is-drawer-open:after:hidden"
                 data-tip="Halaman">
                 <x-icon name="panels-top-left" class="size-5 shrink-0" />
