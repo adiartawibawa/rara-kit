@@ -14,6 +14,8 @@
 
     {{-- Slot untuk script di bawah halaman jika diperlukan --}}
     {{ $scripts ?? '' }}
+
+    @livewireScripts
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-{{-- resources/views/components/layouts/app.blade.php --}}
 @props([
     'title' => null,
     'description' => null,

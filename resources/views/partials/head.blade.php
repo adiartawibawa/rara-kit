@@ -51,4 +51,6 @@
 
     {{-- Additional Head Scripts/Styles --}}
     {{ $head ?? '' }}
+
+    @livewireStyles
 </head>
