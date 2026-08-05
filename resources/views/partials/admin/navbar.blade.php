@@ -29,15 +29,15 @@
                     <span>{{ auth()->user()->name ?? 'Administrator' }}</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('profile.show') }}">
                         <x-icon name="id-card-lanyard" class="size-5 shrink-0" />
                         Profil Saya
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('preferences.index') }}">
                         <x-icon name="sliders-horizontal" class="size-5 shrink-0" />
-                        Pengaturan
+                        Preferensi Saya
                     </a>
                 </li>
                 <div class="divider my-1"></div>

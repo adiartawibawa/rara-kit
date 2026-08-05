@@ -105,7 +105,7 @@
                 class="is-drawer-close:tooltip is-drawer-close:tooltip-right is-drawer-open:before:hidden is-drawer-open:after:hidden"
                 data-tip="Pengaturan">
                 <x-icon name="settings-2" class="size-5 shrink-0" />
-                <span class="is-drawer-close:hidden is-drawer-open:inline">Pengaturan</span>
+                <span class="is-drawer-close:hidden is-drawer-open:inline">Pengaturan Aplikasi</span>
             </a>
         </li>
     </ul>
