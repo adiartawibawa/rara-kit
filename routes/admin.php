@@ -26,4 +26,9 @@ Route::prefix('admin')->group(function () {
     Route::prefix('media')->name('media.')->group(function () {
         Route::view('/', 'pages.admin.media.index')->name('index');
     });
+
+    Route::prefix('comments')->name('comments.')->group(function () {
+        Route::view('/', 'pages.admin.comments.index')->name('index');
+        Route::view('/{comment}', 'pages.admin.comments.show')->name('show');
+    });
 });
