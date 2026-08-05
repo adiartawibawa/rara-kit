@@ -16,4 +16,10 @@ Route::prefix('admin')->group(function () {
         Route::view('/create', 'pages.admin.pages.create')->name('pages.create');
         Route::view('/show', 'pages.admin.pages.show')->name('pages.show');
     });
+
+    Route::prefix('categories')->group(function () {
+        Route::view('/', 'pages.admin.categories.index')->name('categories.index');
+        Route::view('/create', 'pages.admin.categories.create')->name('categories.create');
+        Route::view('/show', 'pages.admin.categories.show')->name('categories.show');
+    });
 });
