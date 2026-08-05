@@ -38,4 +38,8 @@ Route::prefix('admin')->group(function () {
         Route::view('/{user}', 'pages.admin.users.show')->name('show');
         Route::view('/{user}/edit', 'pages.admin.users.edit')->name('edit');
     });
+
+    Route::prefix('settings')->name('settings.')->group(function () {
+        Route::view('/', 'pages.admin.settings.index')->name('index');
+    });
 });
