@@ -22,4 +22,8 @@ Route::prefix('admin')->group(function () {
         Route::view('/create', 'pages.admin.categories.create')->name('categories.create');
         Route::view('/show', 'pages.admin.categories.show')->name('categories.show');
     });
+
+    Route::prefix('media')->name('media.')->group(function () {
+        Route::view('/', 'pages.admin.media.index')->name('index');
+    });
 });

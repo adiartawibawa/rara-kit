@@ -62,7 +62,7 @@
 
         {{-- Media Library --}}
         <li>
-            <a href="#"
+            <a href="{{ route('media.index') }}"
                 class="is-drawer-close:tooltip is-drawer-close:tooltip-right is-drawer-open:before:hidden is-drawer-open:after:hidden"
                 data-tip="Galeri Media">
                 <x-icon name="images" class="size-5 shrink-0" />
