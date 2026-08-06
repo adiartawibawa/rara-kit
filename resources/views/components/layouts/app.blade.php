@@ -41,12 +41,7 @@
 
                 {{-- TAMPILAN MENU MOBILE JIKA BERADA DI BLOG --}}
                 @if ($minimalNav)
-                    <li><a href="{{ url('/') }}" class="font-mono text-xs">← Kembali ke Beranda Utama</a></li>
-                    <li><a href="{{ route('blog.index') }}" class="font-mono text-xs ">
-                            Blog</a></li>
                     <li><a href="{{ url('/#tentang') }}">Tentang</a></li>
-                    <li><a href="{{ url('/#layanan-sekolah') }}">Website Sekolah</a></li>
-                    <li><a href="{{ url('/#layanan-bisnis') }}">Website Bisnis</a></li>
                     <li><a href="{{ url('/#portofolio') }}">Portofolio</a></li>
 
                     {{-- TAMPILAN MENU MOBILE JIKA BERADA DI HOMEPAGE --}}
@@ -63,8 +58,8 @@
                         </details>
                     </li>
                     <li><a href="#portofolio">Portofolio</a></li>
-                    <li><a href="{{ route('blog.index') }}" class="">Blog</a></li>
                     <li><a href="#kontak">Kontak</a></li>
+                    <li><a href="{{ route('blog.index') }}" class="">Blog</a></li>
                 @endif
 
                 <li class="mt-auto pt-6">

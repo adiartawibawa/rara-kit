@@ -390,7 +390,7 @@
             ];
         @endphp
 
-        <div class="max-w-3xl mx-auto space-y-4">
+        <div class="max-w-4xl mx-auto space-y-4">
             @foreach ($faqs as $faq)
                 <div class="collapse collapse-plus bg-base-100 border border-base-300 rounded-box">
                     <input type="radio" name="faq-accordion" />
@@ -426,7 +426,7 @@
                     <div class="space-y-6 text-sm">
                         <div class="flex items-center gap-4">
                             <div class="p-3 bg-base-200 rounded-box text-primary">
-                                <x-icon name="mail" class="h-5 w-5" />
+                                <x-icon name="mailbox" class="h-5 w-5" />
                             </div>
                             <div>
                                 <span class="block text-xs text-base-content/50 font-mono">EMAIL</span>
@@ -437,7 +437,7 @@
 
                         <div class="flex items-center gap-4">
                             <div class="p-3 bg-base-200 rounded-box text-primary">
-                                <x-icon name="phone" class="h-5 w-5" />
+                                <x-icon name="whatsapp" class="h-5 w-5" />
                             </div>
                             <div>
                                 <span class="block text-xs text-base-content/50 font-mono">WHATSAPP</span>
@@ -461,47 +461,101 @@
                 {{-- Formulir Kontak --}}
                 <div class="lg:col-span-7">
                     <form action="#" method="POST"
-                        class="card border border-base-300 p-6 md:p-8 bg-base-100 shadow-sm space-y-4">
+                        class="card bg-base-100 border border-base-300 shadow-sm p-6 md:p-8 space-y-5">
                         @csrf
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="form-control w-full">
-                                <label class="label"><span
-                                        class="label-text font-medium text-xs font-mono uppercase">Nama
-                                        Lengkap</span></label>
-                                <input type="text" name="name" placeholder="John Doe"
-                                    class="input input-bordered w-full" required />
+
+                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                            <div class="form-control">
+                                <label for="name" class="label">
+                                    <span class="label-text text-xs font-mono font-semibold uppercase">
+                                        Nama Lengkap
+                                    </span>
+                                </label>
+
+                                <input id="name" name="name" type="text" value="{{ old('name') }}"
+                                    placeholder="John Doe" autocomplete="name"
+                                    class="input input-bordered w-full @error('name') input-error @enderror" required>
+
+                                @error('name')
+                                    <span class="label">
+                                        <span class="label-text-alt text-error">{{ $message }}</span>
+                                    </span>
+                                @enderror
                             </div>
-                            <div class="form-control w-full">
-                                <label class="label"><span
-                                        class="label-text font-medium text-xs font-mono uppercase">Email</span></label>
-                                <input type="email" name="email" placeholder="nama@email.com"
-                                    class="input input-bordered w-full" required />
+
+                            <div class="form-control">
+                                <label for="email" class="label">
+                                    <span class="label-text text-xs font-mono font-semibold uppercase">
+                                        Email
+                                    </span>
+                                </label>
+
+                                <input id="email" name="email" type="email" value="{{ old('email') }}"
+                                    placeholder="nama@email.com" autocomplete="email"
+                                    class="input input-bordered w-full @error('email') input-error @enderror" required>
+
+                                @error('email')
+                                    <span class="label">
+                                        <span class="label-text-alt text-error">{{ $message }}</span>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
-                        <div class="form-control w-full">
-                            <label class="label"><span
-                                    class="label-text font-medium text-xs font-mono uppercase">Subjek / Jenis
-                                    Layanan</span></label>
-                            <select name="subject" class="select select-bordered w-full">
-                                <option disabled selected>Pilih jenis layanan</option>
-                                <option value="web">Rekayasa Web / Portal</option>
-                                <option value="konsultasi">Konsultasi Digital</option>
-                                <option value="uiux">Desain UI/UX</option>
-                                <option value="lainnya">Lainnya</option>
+                        <div class="form-control">
+                            <label for="subject" class="label">
+                                <span class="label-text text-xs font-mono font-semibold uppercase">
+                                    Subjek / Jenis Layanan
+                                </span>
+                            </label>
+
+                            <select id="subject" name="subject"
+                                class="select select-bordered w-full @error('subject') select-error @enderror"
+                                required>
+                                <option value="" disabled {{ old('subject') ? '' : 'selected' }}>
+                                    Pilih jenis layanan
+                                </option>
+                                <option value="web" {{ old('subject') == 'web' ? 'selected' : '' }}>
+                                    Rekayasa Web / Portal
+                                </option>
+                                <option value="konsultasi" {{ old('subject') == 'konsultasi' ? 'selected' : '' }}>
+                                    Konsultasi Digital
+                                </option>
+                                <option value="uiux" {{ old('subject') == 'uiux' ? 'selected' : '' }}>
+                                    Desain UI/UX
+                                </option>
+                                <option value="lainnya" {{ old('subject') == 'lainnya' ? 'selected' : '' }}>
+                                    Lainnya
+                                </option>
                             </select>
+
+                            @error('subject')
+                                <span class="label">
+                                    <span class="label-text-alt text-error">{{ $message }}</span>
+                                </span>
+                            @enderror
                         </div>
 
-                        <div class="form-control w-full">
-                            <label class="label"><span
-                                    class="label-text font-medium text-xs font-mono uppercase">Pesan</span></label>
-                            <textarea name="message" class="textarea textarea-bordered h-32"
-                                placeholder="Jelaskan kebutuhan atau gambaran proyek Anda..." required></textarea>
+                        <div class="form-control">
+                            <label for="message" class="label">
+                                <span class="label-text text-xs font-mono font-semibold uppercase">
+                                    Pesan
+                                </span>
+                            </label>
+
+                            <textarea id="message" name="message" rows="6" placeholder="Jelaskan kebutuhan atau gambaran proyek Anda..."
+                                class="textarea textarea-bordered w-full @error('message') textarea-error @enderror" required>{{ old('message') }}</textarea>
+
+                            @error('message')
+                                <span class="label">
+                                    <span class="label-text-alt text-error">{{ $message }}</span>
+                                </span>
+                            @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-primary w-full gap-2">
-                            Kirim Pesan
+                        <button type="submit" class="btn btn-primary w-full sm:w-auto sm:self-start gap-2">
                             <x-icon name="send" class="h-4 w-4" />
+                            <span>Kirim Pesan</span>
                         </button>
                     </form>
                 </div>

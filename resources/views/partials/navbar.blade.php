@@ -1,6 +1,6 @@
 @php
     // Fallback jika navbar di-include di tempat lain tanpa variabel $minimalNav
-    $minimalNav = $minimalNav ?? request()->routeIs('blog.*') || request()->is('blog*');
+    $minimalNav = $minimalNav ?? request()->routeIs('blog.*');
 @endphp
 
 <div class="navbar bg-base-100 max-w-7xl shadow-sm mx-auto md:rounded-full px-4 md:px-8">
@@ -46,8 +46,8 @@
                     </details>
                 </li>
                 <li><a href="#portofolio">Portofolio</a></li>
-                <li><a href="{{ route('blog.index') }}" class="">Blog</a></li>
                 <li><a href="#kontak">Kontak</a></li>
+                <li><a href="{{ route('blog.index') }}" class="">Blog</a></li>
             </ul>
         @endif
     </div>
